@@ -1,0 +1,240 @@
+
+<head>
+
+    <title>
+        Seqta ATAR Calculator
+    </title>
+
+    <style>
+
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #subjects {
+            margin-top: 25px;
+            padding: 0px 0px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .subject {
+            display: flex;
+            height: 30px;
+            align-items: center;
+            padding: 10px;
+            gap: 10px;
+            border-width: 100px;
+            border-color: #000;
+            background: #FFFFFF;
+            border: 2px solid #000000;
+            border-radius: 10px;
+        }
+
+        .subject .fill {
+            flex-grow: 1;
+        }
+
+        .subject .grade {
+            background-color: #FFCC00;
+            height: 25px;
+            width: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 20px;
+            font-family: 'Aptos';
+            font-style: normal;
+            font-weight: 700;
+            border-radius: 4px;
+        }
+
+        .subject .name {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 15px;
+            font-family: 'Aptos';
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .subject .reminder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 15px;
+            font-family: 'Aptos';
+            font-style: normal;
+            font-weight: 200;
+        }
+
+        .subject .expand {
+            zoom: 0.6;
+            padding-left: 10px;
+            cursor: pointer;
+        }
+
+
+        #top-section {
+            margin-top: 100px;
+            padding: 0px 0px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            margin: 0;
+            font-size: 20px;
+            font-family: 'Aptos';
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        #ATAR-scores {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            zoom: 0.5;
+        }
+
+        .predicted {
+            margin: 30px;
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            align-items: center;
+            --primary-color: #CB30E0;
+            gap: 15px;
+        }
+
+        .previous {
+            margin: 30px;
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            align-items: center;
+            --primary-color: #FFCC00;
+            gap: 20px;
+        }
+
+        .previous .circle,
+        .predicted .circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10000000000px;
+            width: 200px;
+            height: 200px;
+            border: 15px solid var(--primary-color);
+            color: var(--primary-color);
+            box-sizing: border-box;
+            font-size: 75px;
+            font-family: 'Aptos';
+            font-style: normal;
+            font-weight: 900;
+            overflow: hidden;
+        }
+
+        .current .label,
+        .previous .label,
+        .predicted .label {
+            font-size: 30px;
+            font-family: 'Aptos';
+            font-style: normal;
+            font-weight: 400;
+            overflow: hidden;
+        }
+
+        .current {
+            margin: 30px;
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .current .circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10000000000px;
+            width: 300px;
+            height: 300px;
+            border: 15px solid var(--primary-color);
+            color: var(--primary-color);
+            box-sizing: border-box;
+            font-size: 100px;
+            font-family: 'Aptos';
+            font-style: normal;
+            font-weight: 900;
+            overflow: hidden;
+            color: #fff;
+            background: linear-gradient(180deg, #00FF40 0%, #34C759 100%);
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+<div id="top-section">
+    <h1 class="title">Your ATAR:</h1>
+
+    <div id="ATAR-scores">
+        <div class="previous">
+            <div class="circle">61</div>
+            <div class="label" >Previous</div>
+        </div>
+
+        <div class="current">
+            <div class="circle">71</div>
+            <div class="label" >Current</div>
+        </div>
+
+        <div class="predicted">
+            <div class="circle">99</div>
+            <div class="label" >Predicted</div>
+        </div>
+    </div>
+</div>
+
+<div id="subjects">
+    <h1 class="title">Your Subjects:</h1>
+
+    <div style="width: 470px;"></div>
+
+    <div class="subject">
+        <div class="name">ATAR Maths Methods</div>
+        <div class="grade">C</div>
+        <div class="fill"></div>
+        <div class="reminder">Task Due in 5 days</div>
+        <div class="expand">
+            <svg width="33" height="20" viewBox="0 0 33 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_6_79)">
+                    <path d="M16.1652 20C16.6302 20 17.0953 19.8121 17.4115 19.4554L31.8095 4.56337C32.1257 4.24411 32.3118 3.83098 32.3118 3.36149C32.3118 2.38495 31.5862 1.63379 30.6189 1.63379C30.154 1.63379 29.7261 1.82158 29.4099 2.12206L15.1607 16.8263H17.1511L2.90192 2.12206C2.60429 1.82158 2.17644 1.63379 1.69279 1.63379C0.725479 1.63379 0 2.38495 0 3.36149C0 3.83098 0.18602 4.24411 0.502256 4.58214L14.9002 19.4554C15.2537 19.8121 15.6815 20 16.1652 20Z" fill="black"/>
+                </g>
+                <defs>
+                    <clipPath id="clip0_6_79">
+                        <rect width="33" height="20" fill="white"/>
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
+    </div>
+
+</div>
+
+
+
+</body>
